@@ -1,8 +1,9 @@
 
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './App.css';
 function App() {
-
+  const navigate = useNavigate();
   const [loader, setLoader] = useState(false)
 
 
@@ -24,6 +25,7 @@ function App() {
           alert(`${json.message}`);
           sessionStorage.setItem('user', json.data.token);
           console.log(sessionStorage.getItem('user'));
+          navigate('/dashboard');
         } else {
           alert(`${json.message}`)
         }
@@ -46,7 +48,7 @@ function App() {
         </div>
         <button type="submit" className="btn btn-primary" >Login</button>
       </form>
-      <div style={{position:"fixed",zIndex:"100",top:"30vh",left:"30%"}}>
+      <div style={{ position: "fixed", zIndex: "100", top: "30vh", left: "30%" }}>
         {loader && <img src='https://mir-s3-cdn-cf.behance.net/project_modules/disp/35771931234507.564a1d2403b3a.gif' alt='loading' />}
       </div>
     </div>
