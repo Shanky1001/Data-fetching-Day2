@@ -1,12 +1,25 @@
 
 .App{
     padding: 2rem;
-    width: 80%;
+    width: 100%;
+}
+.loginContainer{
+    width: 70%;
     margin: auto;
-    font-size: 1.5rem;
+}
+.loginContainer h2{
+    font-size: 2rem;
 }
 
-img{
-    width: 300px;
-    height: 200px;
+.loginContainer form{
+    width: 100%;
+    margin-top: 2rem;
+    padding: 4rem 3rem;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 1rem;
+}
+.toast{
+    position: fixed;
+    bottom: 10%;
 }
