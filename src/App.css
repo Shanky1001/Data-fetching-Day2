@@ -23,3 +23,33 @@
     position: fixed;
     bottom: 10%;
 }
+table tr th{
+    text-align: center !important;
+}
+option{
+    text-align: center !important;
+    padding: 1rem !important;
+}
+
+
+.tableHeadContainer{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 1rem;
+}
+.paginationContainer{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.tableHeadContainer .btn{
+    background-color: rgb(117, 47, 173);
+    padding: .5rem 2rem;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}

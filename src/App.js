@@ -6,7 +6,9 @@ import '@shopify/polaris/build/esm/styles.css';
 import { AppProvider } from '@shopify/polaris';
 import enTranslations from '@shopify/polaris/locales/en.json';
 import Login from './Pages/Login';
+import Fetch from './HOC/Fetch';
 
+const DashboardMain = Fetch(Dashboard)
 function App() {
 
   return (
@@ -15,7 +17,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path='/' exact element={<Login />} />
-            <Route path='/dashboard' element={<Dashboard />} />
+            <Route path='/dashboard' element={<DashboardMain />} />
           </Routes>
         </BrowserRouter>
       </AppProvider>
@@ -24,3 +26,5 @@ function App() {
 }
 
 export default App;
+
+
