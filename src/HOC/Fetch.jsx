@@ -1,5 +1,5 @@
 
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 
 const Fetch = (Component) => {
@@ -18,7 +18,7 @@ const Fetch = (Component) => {
     const [selected, setSelected] = useState({
       'user_id': "1",
       'Catalog': "1",
-      'shops_domain': "1",
+      'shops.domain': "1",
       'shops_email': "1",
       'shops_plan_Name': "1",
       'updated_At': "1",
@@ -29,7 +29,7 @@ const Fetch = (Component) => {
     const [searchInput, setSearchInput] = useState({
       'user_id': "",
       'Catalog': "",
-      'shops_domain': "",
+      'shops.domain': "",
       'shops_email': "",
       'shops_plan_Name': "",
       'updated_At': "",
@@ -38,9 +38,6 @@ const Fetch = (Component) => {
     });
 
     // // Debouncing for seaching input value
-    // useLayoutEffect(() => {
-
-    // }, [searchInput, selected])
 
     useEffect(() => {
       let a = [];

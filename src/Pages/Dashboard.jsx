@@ -4,7 +4,7 @@ import '../App.css'
 
 
 const Dashboard = ({ setEmpty, rows, setRows, activePage, setActivepage, numberOfRows, setNumberOfRows, searchInput, selected, setSelected, setSearchInput, count }) => {
-  
+
 
     // Number of Rows options
     const noOfRows = [
@@ -48,65 +48,65 @@ const Dashboard = ({ setEmpty, rows, setRows, activePage, setActivepage, numberO
             <Select
                 options={options}
                 value={selected.user_id}
-                onChange={(e) => setSelected({ ...selected, user_id: e })} 
+                onChange={(e) => setSelected({ ...selected, user_id: e })}
             />
-            <TextField clearButton onClearButtonClick={()=>setSearchInput({...searchInput,user_id:''})} value={searchInput.user_id} onChange={(e) => setSearchInput({ ...searchInput, user_id: e })} />
+            <TextField clearButton onClearButtonClick={() => setSearchInput({ ...searchInput, user_id: '' })} value={searchInput.user_id} onChange={(e) => setSearchInput({ ...searchInput, user_id: e })} />
         </>,
         <>
             <Select
                 options={options}
                 value={selected.Catalog}
-                onChange={(e) => setSelected({ ...selected, Catalog: e })} 
+                onChange={(e) => setSelected({ ...selected, Catalog: e })}
             />
-            <TextField clearButton onClearButtonClick={()=>setSearchInput({...searchInput,Catalog:''})} value={searchInput.Catalog} onChange={(e) => setSearchInput({ ...searchInput, Catalog: e })} />
+            <TextField clearButton onClearButtonClick={() => setSearchInput({ ...searchInput, Catalog: '' })} value={searchInput.Catalog} onChange={(e) => setSearchInput({ ...searchInput, Catalog: e })} />
         </>,
         <>
             <Select
                 options={options}
-                value={selected.shops_domain}
-                onChange={(e) => setSelected({ ...selected, shops_domain: e })} 
+                value={selected['shop.domain']}
+                onChange={(e) => setSelected({ ...selected, "shop.domain": e })}
             />
-            <TextField clearButton onClearButtonClick={()=>setSearchInput({...searchInput,shops_domain:''})} value={searchInput.shops_domain} onChange={(e) => setSearchInput({ ...searchInput, shops_domain: e })} />
+            <TextField clearButton onClearButtonClick={() => setSearchInput({ ...searchInput, "shop.domain": '' })} value={searchInput["shop.domain"]} onChange={(e) => setSearchInput({ ...searchInput, shops_domain: e })} />
         </>,
         <>
             <Select
                 options={options}
-                value={selected.shops_email}
-                onChange={(e) => setSelected({ ...selected, shops_email: e })} 
+                value={selected['shops.email']}
+                onChange={(e) => setSelected({ ...selected, 'shops.email': e })}
             />
-            <TextField clearButton onClearButtonClick={()=>setSearchInput({...searchInput,shops_email:''})} value={searchInput.shops_email} onChange={(e) => setSearchInput({ ...searchInput, shops_email: e })} />
+            <TextField clearButton onClearButtonClick={() => setSearchInput({ ...searchInput, 'shops.email': '' })} value={searchInput['shops.email']} onChange={(e) => setSearchInput({ ...searchInput, 'shops.email': e })} />
         </>,
         <>
             <Select
                 options={options}
                 value={selected.shops_plan_Name}
-                onChange={(e) => setSelected({ ...selected, shops_plan_Name: e })} 
+                onChange={(e) => setSelected({ ...selected, shops_plan_Name: e })}
             />
-            <TextField clearButton onClearButtonClick={()=>setSearchInput({...searchInput,shops_plan_Name:''})} value={searchInput.shops_plan_Name} onChange={(e) => setSearchInput({ ...searchInput, shops_plan_Name: e })} />
+            <TextField clearButton onClearButtonClick={() => setSearchInput({ ...searchInput, shops_plan_Name: '' })} value={searchInput.shops_plan_Name} onChange={(e) => setSearchInput({ ...searchInput, shops_plan_Name: e })} />
         </>,
         <>
             <Select
                 options={options}
                 value={selected.updated_At}
-                onChange={(e) => setSelected({ ...selected, updated_At: e })} 
+                onChange={(e) => setSelected({ ...selected, updated_At: e })}
             />
-            <TextField clearButton onClearButtonClick={()=>setSearchInput({...searchInput,updated_At:''})} value={searchInput.updated_At} onChange={(e) => setSearchInput({ ...searchInput, updated_At: e })} />
+            <TextField clearButton onClearButtonClick={() => setSearchInput({ ...searchInput, updated_At: '' })} value={searchInput.updated_At} onChange={(e) => setSearchInput({ ...searchInput, updated_At: e })} />
         </>,
         <>
             <Select
                 options={options}
                 value={selected.created_At}
-                onChange={(e) => setSelected({ ...selected, created_At: e })} 
+                onChange={(e) => setSelected({ ...selected, created_At: e })}
             />
-            <TextField clearButton onClearButtonClick={()=>setSearchInput({...searchInput,created_At:''})} value={searchInput.created_At} onChange={(e) => setSearchInput({ ...searchInput, created_At: e })} />
+            <TextField clearButton onClearButtonClick={() => setSearchInput({ ...searchInput, created_At: '' })} value={searchInput.created_At} onChange={(e) => setSearchInput({ ...searchInput, created_At: e })} />
         </>,
         <>
             <Select
                 options={options}
                 value={selected.domain}
-                onChange={(e) => setSelected({ ...selected, domain: e })} 
+                onChange={(e) => setSelected({ ...selected, domain: e })}
             />
-            <TextField clearButton onClearButtonClick={()=>setSearchInput({...searchInput,domain:''})} value={searchInput.domain} onChange={(e) => setSearchInput({ ...searchInput, domain: e })} />
+            <TextField clearButton onClearButtonClick={() => setSearchInput({ ...searchInput, domain: '' })} value={searchInput.domain} onChange={(e) => setSearchInput({ ...searchInput, domain: e })} />
         </>,
     ];
 
