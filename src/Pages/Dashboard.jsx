@@ -5,8 +5,6 @@ import '../App.css'
 
 const Dashboard = ({ setEmpty, rows, setRows, activePage, setActivepage, numberOfRows, setNumberOfRows, searchInput, selected, setSelected, setSearchInput, count }) => {
   
-  
-    console.log(rows);
 
     // Number of Rows options
     const noOfRows = [
@@ -116,7 +114,7 @@ const Dashboard = ({ setEmpty, rows, setRows, activePage, setActivepage, numberO
     // //    Appending Filter in data array for table
     // let rowsPrint = [[...filter]]
     let rowsPrint = [[...filters], ...rows]
-    rowsPrint.length < 3 && rowsPrint.push([<h1> No data found </h1>])
+    rowsPrint.length < 2 && rowsPrint.push([<h1> No data found </h1>])
 
     return (
         <div className="dashboard">

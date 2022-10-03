@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 
 
 const Fetch = (Component) => {
@@ -37,45 +37,13 @@ const Fetch = (Component) => {
       'domain': "",
     });
 
+    // // Debouncing for seaching input value
+    // useLayoutEffect(() => {
+
+    // }, [searchInput, selected])
 
     useEffect(() => {
       let a = [];
-      const filter = sessionStorage.getItem('FilterString');
-      let url = `https://fbapi.sellernext.com/frontend/admin/getAllUsers?activePage=${activePage}&count=${numberOfRows}${filter}`
-      fetch(url,
-        {
-          method: "GET",
-          headers: {
-            Authorization: sessionStorage.getItem("userToken"),
-          },
-        }
-      )
-        .then((response) => response.json())
-        .then((json) => {
-          setCount(json.data.count)
-          json.data.rows.forEach((value) => {
-            let arr = [
-              value.user_ids,
-              value.catalog,
-              value.username,
-              value.email,
-              value.shopify_plan,
-              value.updated_at,
-              value.created_at,
-              value.shop_url,
-            ];
-            a.unshift(arr)
-          });
-          console.log(a);
-          setRows([...a])
-          setEmpty(false);
-        });
-
-    }, [activePage, numberOfRows, searchInput, selected])
-
-
-    // Debouncing for seaching input value
-    useEffect(() => {
       const getData = setTimeout(() => {
         let filter = ''
         Object.entries(searchInput).forEach(([keys, value]) => {
@@ -84,9 +52,42 @@ const Fetch = (Component) => {
           }
         })
         sessionStorage.setItem('FilterString', filter);
-      }, 100)
+        let url = `https://fbapi.sellernext.com/frontend/admin/getAllUsers?activePage=${activePage}&count=${numberOfRows}${filter}`
+        fetch(url,
+          {
+            method: "GET",
+            headers: {
+              Authorization: sessionStorage.getItem("userToken"),
+            },
+          }
+        )
+          .then((response) => response.json())
+          .then((json) => {
+            setCount(json.data.count)
+            json.data.rows.forEach((value) => {
+              let arr = [
+                value.user_ids,
+                value.catalog,
+                value.username,
+                value.email,
+                value.shopify_plan,
+                value.updated_at,
+                value.created_at,
+                value.shop_url,
+              ];
+              a.unshift(arr)
+            });
+            setRows([...a])
+            setEmpty(false);
+          });
+      }, 50)
+     
       return () => clearTimeout(getData)
-    }, [searchInput, selected])
+
+    }, [activePage, numberOfRows, searchInput, selected])
+
+
+
 
 
 
