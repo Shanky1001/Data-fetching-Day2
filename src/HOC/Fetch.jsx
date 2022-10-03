@@ -80,7 +80,7 @@ const Fetch = (Component) => {
             setRows([...a])
             setEmpty(false);
           });
-      }, 50)
+      }, 250)
      
       return () => clearTimeout(getData)
 
